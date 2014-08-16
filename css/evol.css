@@ -1,0 +1,81 @@
+div.container {
+    position: absolute;
+    left: 30px;
+}
+div.block-top {
+    height: 400px; 
+}
+
+div.block-top div.alert {
+    position: relative;
+    top: 100px; 
+}
+
+body {    
+    background-image: url('../img/evol_wallpaper.jpg');
+    background-repeat: no-repeat;    
+    color: #fff;
+}
+h1, h2, h3, blockquote{
+    
+    text-shadow: 2px 2px 4px #000;
+}
+
+blockquote {    
+    font-style: italic;
+    font-size: 16pt;
+ 
+}
+
+blockquote.blockquote-reverse {
+    border: 0px;
+}
+
+blockquote footer {    
+    color: #fff;
+}
+
+div.shaded-box {    
+    border-radius: 8px;
+    background-color: rgba(10, 10, 10, 0.6);
+    padding: 0px 10px;
+    padding-bottom: 5px;
+    margin-bottom: 5em;
+}
+
+div.shaded-box h3 {
+    padding-top: 10px;
+}
+
+div.shaded-box img {
+    border-radius: 10px;
+    margin-bottom: 10px;    
+}
+
+div.shaded-box table.table {
+    background-color: transparent;
+}
+
+.table tbody tr td {
+    border: 0px;
+}
+
+#evol-quote {
+    position: relative;
+    top: 200px;    
+    width: 840px;
+}
+
+div.content-spacer {
+    position: relative;
+    top: 200px;
+}
+
+#linkbar {
+    position: relative;;
+    top: 150px;
+}
+
+#primer {
+    height: 700px;
+}

@@ -1,0 +1,145 @@
+<div class="row">
+    <div class="block-top">
+        <div class="col-md-12">
+                <div class="alert alert-danger alert-dismissible col-md-offset-2 col-md-8" role="alert" ng-hide="errors.length == 0">
+                    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <ul class="list-unstyled">
+                        <li ng-repeat="msg in errors">{{msg}}</li>
+                    </ul>
+                </div>
+            <div id="evol-quote">
+                <blockquote class="blockquote-reverse">
+                    <p>
+                        &laquo;Evolution goes where it wants, when it wants and does what it wants&raquo;
+                        <br />These words have been said more then once and never fail to generate a large
+                        amount of um, feedback, about our arrogance.
+                    </p>
+                    <footer>Molle</footer>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+    <div class="row" ng-include='"partials/linkbar.html"'></div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="shaded-box">
+                <h3>In remembrance</h3>
+                <table class="table table-condensed">
+                    <tr>
+                        <td>
+                            <img src="https://image.eveonline.com/Type/11567_64.png" alt="11567"/>
+                        </td>
+                        <td>
+                            <strong>Old Bessie</strong><br />
+                            B-R5RB (Immensea)<br />
+                            <i class="fa fa-envelope-o"></i>
+                            <a href="https://zkillboard.com/kill/36253034/">Killmail</a>
+                            <i class="fa fa-film"></i>
+                            <a href="https://www.youtube.com/watch?v=Ab36h4aDUUI">Video</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="https://image.eveonline.com/Type/11567_64.png" alt="11567"/>
+                        </td>
+                        <td>
+                            <strong>Darwin's Revenge</strong><br />
+                            8WA-Z6 (Delve)<br />
+                            <i class="fa fa-envelope-o"></i>
+                            <a href="https://zkillboard.com/kill/-9947457/">Killmail</a>
+                            <i class="fa fa-film"></i>
+                            <a href="https://www.youtube.com/watch?v=82pOIAyMwLE">Video</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="https://image.eveonline.com/Type/11567_64.png" alt="11567"/>
+                        </td>
+                        <td>
+                            <strong>Darwin's Alzheimer return</strong><br/>
+                            Obe (The Forge)<br />
+                            <i class="fa fa-envelope-o"></i>
+                            <a href="https://zkillboard.com/kill/-2275387/">Killmail</a>
+                            <i class="fa fa-film"></i>
+                            <a href="https://www.youtube.com/watch?v=co3K-Piz6X4">Video</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="https://image.eveonline.com/Type/11567_64.png" alt="11567"/>
+                        </td>
+                        <td>
+                            <strong>Darwin's Alzheimer</strong><br />
+                            E-OGL4 (Tribute)<br />
+                            No killmail, was reimbursed.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="https://image.eveonline.com/Type/11567_64.png" alt="11567"/>
+                        </td>
+                        <td>
+                            <strong>Darwin's Contraption</strong><br />
+                            GB-6X5 (Insmother)<br />
+                            <i class="fa fa-envelope-o"></i>
+                            <a href="https://zkillboard.com/kill/-1428356/">Killmail</a>
+                            <i class="fa fa-film"></i>
+                            <a href="https://www.youtube.com/watch?v=1BbYvI2ELXM">Video</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="shaded-box">
+                <h3>Tar's Wall of Shame</h3>
+                <table class="table table-condensed">
+                    <tr ng-repeat="loss in tarLosses|limitTo: 10">
+                        <td>
+                            {{loss.killTime|dateOnly}}<br />
+                            {{ loss.zkb.totalValue|humanifyISK }}
+                        </td>
+                        <td>
+                            <a href="https://zkillboard.com/kill/{{loss.killID}}">
+                                <img src="https://image.eveonline.com/Type/{{loss.victim.shipTypeID}}_32.png" alt="{{loss.victim.shipTypeID}}" />
+                            </a>
+                        </td>
+                        <td>
+                            {{ loss.victim.shipTypeID|shipName }}<br />
+                            <a href="https://zkillboard.com/system/{{loss.solarSystemID}}/">{{ loss.solarSystemID|solarSystemName }}</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <div class="shaded-box">
+                <h3>Victims of Evolution</h3>
+                <table class="table table-condensed">
+                    <tr ng-repeat="kill in recentKills|limitTo: 10">
+                        <td>
+                            {{ kill.killTime|dateOnly}}<br />
+                            {{ kill.zkb.totalValue|humanifyISK }}
+                        </td>
+                        <td>
+                            <a href="https://zkillboard.com/kill/{{kill.killID}}">
+                                <img src="https://image.eveonline.com/Type/{{kill.victim.shipTypeID}}_32.png" alt="{{kill.victim.shipTypeID}}" />
+                            </a>
+                        </td>
+                        <td>
+                            {{kill.victim.shipTypeID|shipName}}<br />
+                            <a href="https://zkillboard.com/system/{{kill.solarSystemID}}/">{{ kill.solarSystemID|solarSystemName }}</a>
+                        </td>
+                        <td>
+                            <img src="{{ kill.victim|corpAllianceImage }}" alt="" />
+                        </td>
+                        <td>
+                            <a href="https://zkillboard.com/character/{{kill.victim.characterID}}">{{kill.victim.characterName}}</a><br />
+                            <a href="https://zkillboard.com/corporation/{{kill.victim.corporationID}}">{{kill.victim.corporationName}}</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
